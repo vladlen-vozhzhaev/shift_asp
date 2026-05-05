@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using WebApplication2.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = "Data Source=blog.db";
+builder.Services.AddDbContext<BlogDbContext>(options => options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
