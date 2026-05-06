@@ -41,7 +41,12 @@ public class BlogController : Controller
         return View();
     }
 
-    
+    [HttpGet]
+    public IActionResult Test()
+    {
+        return Content("TEST!!!");
+    }
+
 
     [HttpPost]
     public IActionResult AddPost(string title, string content, string author)
